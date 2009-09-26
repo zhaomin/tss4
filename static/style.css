@@ -1,0 +1,302 @@
+/* 
+Thanks to http://www.free-css-templates.com.
+This stylesheet is based on the original minimalist style.
+*/
+
+/* Reset all margins and paddings for browsers */
+* { 
+	padding: 0;
+	margin: 0;
+}
+
+body { 
+	font: .8em Verdana, Arial, Sans-Serif; 
+	line-height: 1.6em; 
+	margin: 0
+}
+
+a { color: #0066B3; background: inherit; text-decoration: none }
+h1 { font: bold 1.9em Arial, Arial, Sans-Serif }
+h2 { font: bold 1.2em Arial, Arial, Sans-Serif; padding: 0; margin: 0 }
+h3 { font: bold 1.1em Arial, Arial, Sans-Serif;}
+ul {  padding: 0; margin: 0}
+
+table caption {
+	padding: 0 0 5px 0; 
+	font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	text-align: right;
+}
+
+thead .header th {
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #E8E8E8;
+	border-right: 1px solid #38768d;
+	border-bottom: 1px solid #38768d;
+	border-top: 1px solid #38768d;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background: #CAE8EA url(./table_bg_header.gif) repeat-x;
+}
+
+th.nobg {
+	border-top: 0;
+	border-left: 0;
+	border-right: 1px solid #38768d;
+	background: none;
+}
+
+tr.odd {
+	background: #fff;
+	color: #4f6b72;
+}
+tr.odd td {
+	border-right: 1px solid #38768d;
+	border-bottom: 1px solid #38768d;
+	padding: 3px 3px 3px 12px;
+}
+tr.even {
+	background: #F5FAFA;
+	color: #797268;
+}
+tr.even td {
+	border-right: 1px solid #38768d;
+	border-bottom: 1px solid #38768d;
+	padding: 3px 3px 3px 12px;	
+}
+tr.spec {
+	border-left: 1px solid #38768d;
+	border-top: 0;
+	background: #fff url(./bullet1.gif) no-repeat;
+	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+tr.specalt {
+	border-left: 1px solid #38768d;
+	border-top: 0;
+	background: #f5fafa url(./bullet2.gif) no-repeat;
+	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #797268;
+}
+
+#wrap {	margin: 0 auto;	width: 90% }
+
+/* TOP HEADER -------- */
+#top {
+	margin: 0 auto;
+	padding: 0;
+	color: #666;
+	background: #FFF url(./top.jpg) repeat-x top;
+	height: 81px;
+}
+#top h1 { padding: 10px 0 0 25px; color: #FFF; font-size: 160%; background: transparent;}
+#top h1 a {
+	color: #FFF;	
+}
+#top h2 { padding: 0px 0 0 25px; color: #aaa; font-size: 80%; background: transparent;}
+#top .padding { padding-top: 5px; }
+#top .lefts { 
+	background: transparent url(./topl.jpg) no-repeat left; 
+	height: 81px; 
+}
+#top .rights {
+	background: transparent url(./topr.jpg) no-repeat right;
+	float: right;
+	text-align: right;
+	height: 81px;
+	width: 208px;
+	padding-right: 20px;
+	color: #999;
+}
+#top .rights a, #top .right a:link, #top .right a:hover {
+	color: #BBB;
+	text-decoration: none;
+}
+/* SEARCH BOX AND BUTTON ----------*/
+#search {
+	float: right;
+	text-align: right;
+	padding-right: 20px;
+	padding-top: 25px;
+	/*padding: 19px 25px 0 0;*/
+}
+
+#search input.text { 
+	border: 1px solid #eee;
+	display: inline;
+	margin-top: 5px;
+	width: 120px;
+	height: 12px;
+	font-size: 10px;
+ }
+ #search input.searchbutton {
+	border: 0;
+	background: transparent;
+	color: #FFF;
+	cursor: pointer;
+	font: bold 0.8em Arial, Arial, Sans-Serif
+ }
+
+#posbar { 
+	clear: both; 
+	border-top: 1px dotted #888;	
+	border-bottom: 1px dotted #888;
+	background: #eaeaea;
+	color: #808080;
+	padding: 1px 1px 1px 8px;
+	margin: 10px 8px 3px 8px;
+}
+#posbar a { text-decoration: none; border-bottom: 1px dashed #0066B3; } 
+ 
+ 
+/* TOP MENU ---------- */
+#topmenu {  	margin: 0px 8px 0 8px; 
+			padding: 0;
+			background: url(./menu.jpg) repeat-x top;
+			height: 35px;
+			
+}
+#topmenu .lefts { 
+	background: url(./menul.jpg) no-repeat left; 
+	height: 35px; 
+	padding-left: 5px;
+}
+#topmenu .rights {
+	background: url(./menur.jpg) no-repeat right;
+	float: right;
+	height: 35px;
+	width: 8px;
+}
+#topmenu li a { 
+	color: #FFF;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 15px;
+	text-decoration: none;
+	background: transparent;
+	font-weight: bold
+} 
+#topmenu li { padding: 0px;
+	float: left;
+	margin: 0;
+	font-size: 11px;
+	line-height: 35px;
+	white-space: nowrap;
+	list-style-type: none;
+	width: auto;
+	background: url(./sep.gif) no-repeat top right
+	
+}
+
+#main { background: #FFF; margin: 25px 0 15px 0; color: #666; }
+
+#main #sidebar {
+	width: 18%;
+	float: left;
+	background: #FFF;
+	margin-left: 8px;
+	color: #666;
+	margin-bottom: 25px;
+} 
+
+#main #sidebar .box {
+	background: #efefef;
+	margin-bottom: 10px;
+	padding: 5px;
+	color: #666;
+}
+
+#main #sidebar h2 {
+	font: bold 1.0em Arial, Arial, Sans-Serif; 
+    background: #CDCDCD url(./greyc.gif) no-repeat top right;
+	height: 18px;
+	padding: 3px;
+	color: #777;
+}
+
+
+/* ARTICLES AREA -------- */
+#main #content {
+	padding-left: 8px;
+	color: #444;
+	background: #FFF;
+	/*margin-left: 8px;*/
+	width: 78%;
+	margin-right: 8px;
+	margin-bottom: 25px;
+	float: right;
+}
+#main #content p {
+	margin-bottom: 9px;	
+}
+
+#main #content .box {
+	padding: 5px;
+	border: 1px solid #DDD;
+	background: #EEE;
+	width: 245px;
+	margin: 8px 0px 10px 10px;	
+	float: right;
+}
+
+#main #content h2 {
+	color: #555;
+	text-indent: 17px;
+	background: #FFF url(./head.gif) no-repeat left;
+	margin-bottom: 8px;
+}
+#main #content h3 {
+	color: #666;
+}
+#footer {
+	clear: both;
+	background: #FFF url(./footer.jpg) repeat-x;
+	height: 46px;
+	margin-left: 8px;
+	margin-right: 8px;
+	font-size: 75%;
+	color: #666;
+}
+#footer p  { padding: 5px }
+#footer .rside { float: right; display: inline; padding: 5px; text-align: right}
+
+#sidebar li { list-style-type: none }
+#content .separator {
+	border-top: 1px solid #d5d5d5;
+	text-align: right;
+	margin-bottom: 25px;
+	margin-top: 15px;
+}
+#main #content .date a, #main #sidebar a { border: 0; text-decoration: none; }
+ 
+.comment .date { text-align: left; border: 0;}	
+
+
+#breadcrumbs { 
+	float: left;
+	padding-left: 8px;
+	padding-top: 0px;
+	font: bold .8em Arial, Arial, Sans-Serif; 
+	color: #666;
+	width: 100%;
+	height: 25px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	clear: both;
+}
+
+
+
+#content #txt {width: 85%; height: 10em; padding: 3px 3px 3px 6px; margin-left:0em;}
+#content textarea { border: 1px solid #bbb; width: 85%;  }
+
+
+/* SNEWS */
+#main #content fieldset { float: left; width: 95%; border: 1px solid #ccc; padding: 10px 8px; margin: 0 10px 8px 0; background: #FFF; color: #000; }
+#main #content fieldset p { width: 95%; }
+#main input { padding: 3px; margin: 0; border: 1px solid #bbb }
+p { margin-top: 5px; }
+/*input.search { border: 1px solid #ccc; padding: 4px; width: 160px; }*/
+.comment { background: #FFF; color: #808080; padding: 10px; margin: 0 0 10px 0; border-top: 1px solid #ccc; }
+.commentsbox { background: #FFF; color: #808080; padding: 10px; margin: 0 0 10px 0; border-top: 1px solid #ccc; }

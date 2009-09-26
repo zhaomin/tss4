@@ -2,6 +2,8 @@
 
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('tss4.service_app.views',
-    (r'^(.+?)/', 'service'),
+urlpatterns = patterns('tss4.core_app.views',
+    (r'^$', 'index'),
+    (r'^index.html$', 'index'),
 )
+
