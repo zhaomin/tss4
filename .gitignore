@@ -2,4 +2,5 @@
 *.pyo
 *.swp
 settings.py
+*.sqlite3
 
