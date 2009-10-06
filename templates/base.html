@@ -1,3 +1,4 @@
+{% load apps %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>{% block title %}{% endblock %} - Teaching Support System</TITLE>
@@ -29,13 +30,14 @@
 
 <DIV class="rights"></DIV>
 <DIV class="lefts">
-	<UL>
-		<LI><A href="#" title="Home">HOME</A></LI>
-		<LI><A href="#" title="教学支持系统">TSS</A></LI>
-		<LI><A href="#" title="选课系统">CSS</A></LI>
-		<LI><A href="#" title="人员管理系统">PIS</A></LI>
-		<LI><A href="#" title="课程大纲">Curriculum</A></LI>
-	</UL>
+    <UL>
+        <LI><A href="#" title="Home">HOME</A></LI>
+        {% list_apps %}
+		<!--<LI><A href="#" title="教学支持系统">TSS</A></LI>-->
+		<!--<LI><A href="#" title="选课系统">CSS</A></LI>-->
+		<!--<LI><A href="#" title="人员管理系统">PIS</A></LI>-->
+		<!--<LI><A href="#" title="课程大纲">Curriculum</A></LI>-->
+    </UL>
 </DIV>
 	</DIV>
 	<DIV id="posbar">

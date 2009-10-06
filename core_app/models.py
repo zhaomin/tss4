@@ -8,6 +8,8 @@ class Application(models.Model):
     app_key = models.CharField(max_length=200)
     pub_key = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
+    description = models.TextField(max_length=200)
+    link = models.CharField(max_length=200)
 
 # models constructed by ERD diagram of original TSS    
 class Module(models.Model):
