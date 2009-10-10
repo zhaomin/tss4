@@ -7,7 +7,13 @@ from django.conf import settings
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+if settings.DEBUG:
+    urlpatterns = patterns('',
+        (r'^%s(?P<path>.*)$' % settings.MEDIA_URL[1:], 'django.views.static.serve',
+                {'document_root' : settings.MEDIA_ROOT}),
+    )
+
+urlpatterns += patterns('',
     # Example:
     (r'^service/', include('tss4.service_app.urls')),
     (r'^', include('tss4.core_app.urls')),
@@ -20,9 +26,4 @@ urlpatterns = patterns('',
     # (r'^admin/(.*)', admin.site.root),
 )
 
-if settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve',
-                {'document_root' : settings.STATIC_DOC_ROOT}),
-    )
 

@@ -1,9 +1,8 @@
-{% load apps %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>{% block title %}{% endblock %} - Teaching Support System</TITLE>
 
-<LINK rel="stylesheet" type="text/css" href="./static/style.css" media="screen">
+<LINK rel="stylesheet" type="text/css" href="{{MEDIA_URL}}style.css" media="screen">
 </HEAD><BODY>
 <DIV id="wrap">
 	<DIV id="top">
@@ -15,12 +14,10 @@
 	</SPAN>
 </DIV>
 <DIV id="search">
-	<!--
 	<input type="text"/>&nbsp;<input class="searchbutton" type="submit" value="Go"/>
-	-->
 </DIV>
 <DIV class="lefts">
-	<H1><A href="#">Teaching Support System</A></H1>
+	<H1><A href="{% url core_app.views.index %}">Teaching Support System</A></H1>
 	<H2>Software Institute of Nanjing University</H2>
 </DIV>
 	</DIV>
@@ -32,7 +29,9 @@
 <DIV class="lefts">
     <UL>
         <LI><A href="#" title="Home">HOME</A></LI>
-        {% list_apps %}
+        {% for app in apps %}
+        <LI><A href="{% url core_app.views.load_app app.name %}">{{app.name}}</A></LI>
+        {% endfor %}
 		<!--<LI><A href="#" title="教学支持系统">TSS</A></LI>-->
 		<!--<LI><A href="#" title="选课系统">CSS</A></LI>-->
 		<!--<LI><A href="#" title="人员管理系统">PIS</A></LI>-->
@@ -46,56 +45,60 @@
 
 	<DIV id="main">
 		
-<DIV id="sidebar">
-	<H2>Operations</H2>
-	<DIV class="box">
-		<UL>
-			<LI><A href="#">Sign Out</A></LI>
-		</UL>
-	</DIV>
-</DIV>
+<!--
+   -<DIV id="sidebar">
+   -    <H2>Operations</H2>
+   -    <DIV class="box">
+   -        <UL>
+   -            <LI><A href="#">Sign Out</A></LI>
+   -        </UL>
+   -    </DIV>
+   -</DIV>
+   -->
 		
 <DIV id="content">
-	<H2>Latest Announcements</H2>
-	<TABLE width="100%" cellspacing="0">
-		<THEAD>
-		<TR class="header">
-			<TH style="width:60%">TITLE</TH>
-			<TH>COURSE</TH>
-		</TR>
-		</THEAD>
-		<TBODY>
-		<TR class="odd">
-			<TD style="width:60%">ddfasd</TD>
-			<TD>UML</TD>
-		</TR>
-		<TR class="even">
-			<TD style="width:60%">ddfasd</TD>
-			<TD>信息系统课程实践</TD>
-		</TR>
-		</TBODY>
-	</TABLE>
-	<DIV class="separator"></DIV>
+{% block content %}
+    <!--<H2>Latest Announcements</H2>-->
+	<!--<TABLE width="100%" cellspacing="0">-->
+		<!--<THEAD>-->
+		<!--<TR class="header">-->
+			<!--<TH style="width:60%">TITLE</TH>-->
+			<!--<TH>COURSE</TH>-->
+		<!--</TR>-->
+		<!--</THEAD>-->
+		<!--<TBODY>-->
+		<!--<TR class="odd">-->
+			<!--<TD style="width:60%">ddfasd</TD>-->
+			<!--<TD>UML</TD>-->
+		<!--</TR>-->
+		<!--<TR class="even">-->
+			<!--<TD style="width:60%">ddfasd</TD>-->
+			<!--<TD>信息系统课程实践</TD>-->
+		<!--</TR>-->
+		<!--</TBODY>-->
+	<!--</TABLE>-->
+	<!--<DIV class="separator"></DIV>-->
 	
-	<H2>Latest Forum Topics</H2>
-	<TABLE width="100%" cellspacing="0">
-		<THEAD>
-		<TR class="header">
-			<TH style="width:60%">TITLE</TH>
-			<TH>COURSE</TH>
-		</TR>
-		</THEAD>
-		<TBODY>
-		<TR class="odd">
-			<TD style="width:60%">ddfasd</TD>
-			<TD>UML</TD>
-		</TR>
-		<TR class="even">
-			<TD style="width:60%">ddfasd</TD>
-			<TD>信息系统课程实践</TD>
-		</TR>
-		</TBODY>
-	</TABLE>
+	<!--<H2>Latest Forum Topics</H2>-->
+	<!--<TABLE width="100%" cellspacing="0">-->
+		<!--<THEAD>-->
+		<!--<TR class="header">-->
+			<!--<TH style="width:60%">TITLE</TH>-->
+			<!--<TH>COURSE</TH>-->
+		<!--</TR>-->
+		<!--</THEAD>-->
+		<!--<TBODY>-->
+		<!--<TR class="odd">-->
+			<!--<TD style="width:60%">ddfasd</TD>-->
+			<!--<TD>UML</TD>-->
+		<!--</TR>-->
+		<!--<TR class="even">-->
+			<!--<TD style="width:60%">ddfasd</TD>-->
+			<!--<TD>信息系统课程实践</TD>-->
+		<!--</TR>-->
+		<!--</TBODY>-->
+	<!--</TABLE>-->
+{% endblock %}
 </DIV>
 
 	</DIV>
@@ -105,21 +108,21 @@
 <DIV class="rside">Copyright &copy; 2006 - 2009 
 <A href="http://software.nju.edu.cn/">Software Institute of Nanjing University</A><BR>
 <A href="#">Privacy</A> - <A href="#">Terms of Use</A> - 
+<A href="#">Developers</A> - 
 <A href="#">About us</A>
-
 </DIV>
 <P>
 
 <A rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/cn/" title="Creative Commons License">
-<IMG alt="Creative Commons License" style="border-width:0" src="./static/ccl.png">
+<IMG alt="Creative Commons License" style="border-width:0" src="{{MEDIA_URL}}ccl.png">
 </A>
 &nbsp;&nbsp;
 <A href="http://validator.w3.org/check?uri=referer" title="Validate XHTML">
-<IMG alt="Validate XHTML" src="./static/xhtml_valid.gif" style="border-width:0">
+<IMG alt="Validate XHTML" src="{{MEDIA_URL}}xhtml_valid.gif" style="border-width:0">
 </A>
 &nbsp;&nbsp;
 <A href="http://jigsaw.w3.org/css-validator/check/referer" title="Validate CSS">
-<IMG src="./static/css_valid.gif" style="border-width:0" alt="Validate CSS"></A>
+<IMG src="{{MEDIA_URL}}css_valid.gif" style="border-width:0" alt="Validate CSS"></A>
 </P>
 	</DIV>
 </DIV>

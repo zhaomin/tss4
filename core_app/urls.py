@@ -5,5 +5,6 @@ from django.conf.urls.defaults import *
 urlpatterns = patterns('tss4.core_app.views',
     (r'^$', 'index'),
     (r'^index.html$', 'index'),
+    (r'^(.+?)/$', 'load_app'),
 )
 
