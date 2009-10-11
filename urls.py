@@ -7,6 +7,7 @@ from django.conf import settings
 # from django.contrib import admin
 # admin.autodiscover()
 
+urlpatterns = []
 if settings.DEBUG:
     urlpatterns = patterns('',
         (r'^%s(?P<path>.*)$' % settings.MEDIA_URL[1:], 'django.views.static.serve',

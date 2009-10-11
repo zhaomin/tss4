@@ -28,9 +28,9 @@
 <DIV class="rights"></DIV>
 <DIV class="lefts">
     <UL>
-        <LI><A href="#" title="Home">HOME</A></LI>
+        <LI><A href="{% url core_app.views.index %}" title="Home">HOME</A></LI>
         {% for app in apps %}
-        <LI><A href="{% url core_app.views.load_app app.name %}">{{app.name}}</A></LI>
+        <LI><A href="{% url core_app.views.service_app app.unix_name ""%}">{{app.name}}</A></LI>
         {% endfor %}
 		<!--<LI><A href="#" title="教学支持系统">TSS</A></LI>-->
 		<!--<LI><A href="#" title="选课系统">CSS</A></LI>-->

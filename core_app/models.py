@@ -7,8 +7,16 @@ from django.db import models
 class Application(models.Model):
     app_key = models.CharField(max_length=200)
     pub_key = models.CharField(max_length=200)
+
+    # short name which will be shown in the navigation bar; Unicode is
+    # acceptable
     name = models.CharField(max_length=200)
-    description = models.TextField(max_length=200)
+
+    # base path for thi application; must be unique, in lower-case ASCII
+    # and shorter than 12 characters (inclusive)
+    unix_name = models.CharField(max_length=12);
+
+    description = models.TextField(max_length=200) # detailed description
     link = models.CharField(max_length=200)
 
 # models constructed by ERD diagram of original TSS    

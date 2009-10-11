@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block title %}{{app.name}}{% endblock %}
+
 {% block content %}
-{{ app_name }}
+{% autoescape off %}
+{{ app.description }}
+{{ content }}
+{% endautoescape %}
 {% endblock %}
