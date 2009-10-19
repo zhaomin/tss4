@@ -10,26 +10,34 @@ class Application(models.Model):
     name = models.CharField(max_length=200)
 
 # models constructed by ERD diagram of original TSS    
+
+class CourseTemplate(models.Model):
+    name=models.CharField(max_length=200)
+    number = models.CharField(max_length=100, unique=True)
+
+class ModuleTemplate(models.Model):
+    name=models.CharField(max_length=200)
+    module=models.OneToOneField(Module)
+
+class Course(models.Model):
+    name=models.CharField(max_length=200)
+    time=models.TimeField()
+    teachers = models.ManyToManyField(Person)
+    tas = models.ManyToManyField(Person) # teaching assistants
+    students = models.ManyToManyField(Person)
+
 class Module(models.Model):
     name=models.CharField(max_length=200)
     grade=models.IntegerField()
+    template = models.ForeignKey(ModuleTemplate)
+    compulsory_course = models.ManyToManyField(Course)
 
 class Person(models.Model):
     name=models.CharField(max_length=200)
     mailAccount=models.EmailField()
     grade=models.IntegerField()
-    role=models.CharField(max_length=100)
+    role=models.IntegerField()
     module=models.ForeignKey(Module)
-    
-class Course(models.Model):
-    name=models.CharField(max_length=200)
-    time=models.TimeField()
-    participants=models.ManyToManyField(Person)
-    
-class CourseTemplate(models.Model):
-    name=models.CharField(max_length=200)
-    course=models.OneToOneField(Course)
+    active_courses = models.ManyToManyField(Course)
+    finished_courses = models.ManyToManyField(Course)
 
-class ModuleTemplate(models.Model):
-    name=models.CharField(max_length=200)
-    module=models.OneToOneField(Module)
